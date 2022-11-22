@@ -347,7 +347,7 @@ h3{
   width:100%;  
 }
 .programa-evento{
-  background-color: rgba(255,255,255,0.8);
+  background-color: rgba(238, 235, 235, 0.5);
   padding:15px;
   margin-top:80px;
 }
@@ -405,7 +405,7 @@ h3{
 }
 .detalle-evento p{
   margin-bottom:20px;
-  font-size:20px;
+  font-size:1rem;
 }
 
 /* ==========================================================================
