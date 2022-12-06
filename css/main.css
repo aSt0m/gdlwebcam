@@ -101,6 +101,9 @@ body{
 
 :root{
   --color-primary: #fe4918;
+  --color-black:#000;
+  --color-white:#fff;
+
 }
 
 /* Globales */
@@ -109,6 +112,7 @@ body{
   margin:0 auto;
 
 }
+
 @media (min-width: 480px){
   .contenedor{
     width:95%;
@@ -158,7 +162,21 @@ h3{
   margin-top:20px;
   display:inline-block;
   transition: all .7s ease;
+  border:2px solid var(--color-primary)
 }
+.button.hollow,
+.button.hollow:hover{
+  background:#fff;
+  color:var(--color-primary);
+
+}
+ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+
 .button:hover{
   background:#e33000;
 }
@@ -325,7 +343,7 @@ h3{
 .section{
   padding: 10rem 0
 }
-.section p{
+section p{
   font-size:1rem; 
   text-align:center;
 }
@@ -407,7 +425,169 @@ h3{
   margin-bottom:20px;
   font-size:1rem;
 }
+/* Invitados */
+.lista-invitados li{
+  padding:10px   ;
+  float:left;
+}
+@media (min-width: 480px){
+  .lista-invitados li{
+    width:50%;
+  }
 
+}
+@media (min-width: 768px){
+  .lista-invitados li{
+    width:33%;
+  }
+
+}
+.invitado{
+  position:relative;
+  overflow:hidden;
+}
+.invitado img{
+  max-width:100%;
+  filter:gray;
+  -webkit-filter: grayscale(1); 
+  -webkit-transition: all .5s ease-in-out;
+}
+.invitado:hover img{
+  -webkit-filter: grayscale(0);
+  -webkit-transform: scale(1.1)
+}
+.invitado p{
+  position:absolute;
+  bottom:0;
+  left:0;
+  padding:15px 10px;
+  margin:0;
+  background:rgba(0,0,0,0.55);
+  width:100%;
+  text-align:left;
+  font-family:'Oswald', sans-serif;
+  color:#fe4918;  
+  text-transform:uppercase;
+  transition:all .4s ease-in-out;
+}
+.invitado:hover p{
+  bottom:-80px;
+  opacity:0;
+}
+/* Contador */
+
+
+.parallax::before{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment:fixed;
+
+  -webkit-filter:brightness(.8);  
+
+  
+
+}
+div.contador{
+  position:relative;
+  height:auto
+}
+div.contador:before{
+  background-image: url(../img/bg-resumen.jpg);
+  content:''
+}
+.resumen-evento{
+  position:relative;
+  padding:120px 0;
+}
+.resumen-evento li{
+  width:50%;
+  float:left;
+  text-align:center;
+  color:#fff;
+  text-transform:uppercase;
+}
+@media (min-width: 768px){
+  .resumen-evento li{
+    width:25%;
+}
+}
+
+.numero{
+  color:var(--color-primary);
+  font-size:3.5rem;
+  display:block;
+  margin:0 0 10px 0; 
+  font-family:'Oswald',sans-serif;
+
+}
+
+/* Tabla de precios */
+.lista-precios > li{
+  padding:10px;
+}
+
+@media (min-width: 768px){
+  .lista-precios > li{
+    float: left;
+    width:33.3%;
+  }
+}
+.tabla-precio{
+    border: 1px solid #e1e1e1;
+    background:#fff;
+    padding:40px 0;
+    text-align:center;
+
+}
+.tabla-precio:hover{
+  transform:scale(1.1);
+  border:1px solid var(--color-primary);
+  box-shadow: 0px 0px 50px #666;
+  transition: all .4s ease-in-out;
+}
+.tabla-precio ul li{
+  font-family:'PT Sans', sans-serif;
+  font-size:.9rem;
+  margin-bottom:20px;
+  text-transform:uppercase;
+  color:#868686;
+  line-height:26px;
+}
+.tabla-precio ul li:before{
+  font-family:'FontAwesome';
+  display:inline-block;
+  vertical-align: top;
+  padding:0 5px;
+  font-size:1.2rem;
+  color:green;
+  --webkit-font-smoothing: antialiased;
+  content:'\f00c'
+}
+.tabla-precio h3{
+  font-family:'Oswald',sans-serif;
+  font-size:16px;
+  text-transform:uppercase;
+}
+.tabla-precio p.numero{
+  color:#000;  
+  letter-spacing:3px;
+  margin-top:20px 0;
+
+}
+/* Mapa */
+.mapa{
+  height: 30rem;
+  background:linear-gradient(360deg, var(--color-primary),#F2F2F2)
+}
+
+ /* Testimoniales */
+ 
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -460,21 +640,7 @@ h3{
   width: auto;
 }
 
-/* Contador */
-.parallax::before{
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-  -webkit-filter:  brightness(.8);
-  
 
-}
 /*
  * Hide visually and from screen readers, but maintain layout
  */
