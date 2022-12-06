@@ -471,7 +471,9 @@ h3{
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
-  -webkit-filter brightness(.8)
+  -webkit-filter:  brightness(.8);
+  
+
 }
 /*
  * Hide visually and from screen readers, but maintain layout
